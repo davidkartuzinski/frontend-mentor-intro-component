@@ -71,7 +71,9 @@ function App() {
           >
             <Input
               name="firstName"
-              register={register({ required: true, minLength: 2 })}
+              // register={register({ required: true, minLength: 2 })} // Then this with register
+              inputRef={register({ required: true, minLength: 2 })} // Original
+              // ref={register({ required: true, minLength: 2 })} // Original
               Id="firstName"
               type="text"
               placeholder="First Name"
@@ -85,7 +87,9 @@ function App() {
 
             <Input
               name="lastName"
-              register={register({ required: true, minLength: 2 })}
+              // register={register({ required: true, minLength: 2 })}
+              inputRef={register({ required: true, minLength: 2 })}
+              // ref={register({ required: true, minLength: 2 })}
               Id="lastName"
               type="text"
               placeholder="Last Name"
@@ -96,7 +100,9 @@ function App() {
 
             <Input
               name="email"
-              register={register({ required: true, minLength: 2 })}
+              // register={register({ required: true, minLength: 2 })}
+              inputRef={register({ required: true, minLength: 2 })}
+              // ref={register({ required: true, minLength: 2 })}
               Id="email"
               type="email"
               placeholder="Email Address"
@@ -107,7 +113,9 @@ function App() {
 
             <Input
               name="password"
-              register={register({ required: true, minLength: 2 })}
+              // register={register({ required: true, minLength: 2 })}
+              // inputRef={register({ required: true, minLength: 2 })}
+              ref={register({ required: true, minLength: 2 })}
               Id="password"
               type="password"
               placeholder="Password"
