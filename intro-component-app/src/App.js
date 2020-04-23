@@ -1,5 +1,6 @@
 import React from "react";
 import styled, { createGlobalStyle } from "styled-components";
+import { useForm } from "react-hook-form";
 import {
   Form,
   Input,
@@ -32,6 +33,11 @@ const StyledMain = styled.main`
 `;
 
 function App() {
+  const { register, handleSubmit, errors } = useForm();
+  const onSubmit = (data) => {
+    console.log(data);
+  };
+
   const contentParagraph =
     "See how experienced developers solve problems in real-time. Watching scripted tutorials is great, but understanding how developers think is invaluable.";
   const heading = "Learn to code by watching others";
@@ -59,11 +65,57 @@ function App() {
           </Content>
           <Offer offer={offer} />
 
-          <Form termsAndConditions={termsAndConditions}>
-            <Input Id="firstName" type="text" placeholder="First Name" />
-            <Input Id="lastName" type="text" placeholder="Last Name" />
-            <Input Id="email" type="email" placeholder="Email Address" />
-            <Input Id="password" type="password" placeholder="Password" />
+          <Form
+            termsAndConditions={termsAndConditions}
+            onSubmit={handleSubmit(onSubmit)}
+          >
+            <Input
+              name="firstName"
+              register={register({ required: true, minLength: 2 })}
+              Id="firstName"
+              type="text"
+              placeholder="First Name"
+            />
+            {errors.firstName && errors.firstName.type === "required" && (
+              <p>First Name cannot be empty.</p>
+            )}
+            {errors.firstName && errors.firstName.type === "minLength" && (
+              <p>First Name must be at least 2 characters.</p>
+            )}
+
+            <Input
+              name="lastName"
+              register={register({ required: true, minLength: 2 })}
+              Id="lastName"
+              type="text"
+              placeholder="Last Name"
+            />
+            {errors.lastName && errors.lastName.type === "required" && (
+              <p>Last Name cannot be empty.</p>
+            )}
+
+            <Input
+              name="email"
+              register={register({ required: true, minLength: 2 })}
+              Id="email"
+              type="email"
+              placeholder="Email Address"
+            />
+            {errors.email && errors.email.type === "required" && (
+              <p>Email cannot be empty.</p>
+            )}
+
+            <Input
+              name="password"
+              register={register({ required: true, minLength: 2 })}
+              Id="password"
+              type="password"
+              placeholder="Password"
+            />
+            {errors.password && errors.password.type === "required" && (
+              <p>Password cannot be empty.</p>
+            )}
+
             <SubmitButton buttonText={buttonText} />
           </Form>
         </StyledMain>
