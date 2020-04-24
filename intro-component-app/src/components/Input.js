@@ -22,7 +22,7 @@ const StyledLabel = styled.label`
   }
 `;
 
-const Input = ({ placeholder, type, Id }) => {
+const Input = React.forwardRef(({ placeholder, type, Id, name }, ref) => {
   return (
     <StyledLabel className="input-label" htmlFor={Id}>
       <StyledInput
@@ -30,9 +30,11 @@ const Input = ({ placeholder, type, Id }) => {
         type={type}
         id={Id}
         aria-label={placeholder}
+        ref={ref}
+        name={name}
       />
     </StyledLabel>
   );
-};
+});
 
 export { Input };
