@@ -15,6 +15,9 @@ body {
     margin: 0;
     height: 100vw;
   } 
+  input:focus, textarea:focus, select:focus{
+        outline: none;
+    }
   
   main {
     margin: 8px;
