@@ -8,6 +8,18 @@ const StyledSection = styled.section`
   font-weight: 400;
   text-align: center;
   padding: 0 0.5rem;
+  max-width: 540px;
+  margin: 0 auto;
+
+  @media screen and (min-width: 1150px) {
+    grid-column: 2 / span 1;
+    grid-row: 2 / span 1;
+    padding: 0;
+
+    p {
+      text-align: left;
+    }
+  }
 `;
 
 const Content = ({ children, paragraph }) => {

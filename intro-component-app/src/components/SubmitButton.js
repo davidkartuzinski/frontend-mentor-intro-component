@@ -12,6 +12,7 @@ const StyledButton = styled.button`
   background-color: #38cc8b;
   padding: 1rem;
   width: 100%;
+  max-width: 460px;
   font-family: "Poppins", sans-serif;
   font-weight: 600;
   font-size: 0.88rem;
