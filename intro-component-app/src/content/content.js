@@ -5,7 +5,8 @@ const contentParagraph =
 const heading = "Learn to code by watching others";
 const offer = (
   <p>
-    <strong>Try it free 7 days</strong> then $20/mo. thereafter.
+    <strong style={{ fontWeight: "600" }}>Try it free 7 days</strong> then
+    $20/mo. thereafter
   </p>
 );
 

@@ -19,8 +19,10 @@ function App() {
           <Content paragraph={contentParagraph}>
             <Header heading={heading} />
           </Content>
-          <Offer offer={offer} />
-          <Form termsAndConditions={termsAndConditions} />
+          <div>
+            <Offer offer={offer} />
+            <Form termsAndConditions={termsAndConditions} />
+          </div>
         </main>
       </div>
     </>
