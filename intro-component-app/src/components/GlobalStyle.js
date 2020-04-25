@@ -28,7 +28,7 @@ body {
       margin-bottom: 4rem;
     }
   
-    .offer {
+    .offer, .success-message {
       margin-bottom: 1.5rem;
     }
     @media screen and (min-width: 1150px) {

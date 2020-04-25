@@ -4,3 +4,4 @@ export * from "./Content";
 export * from "./Header";
 export * from "./Offer";
 export * from "./SubmitButton";
+export * from "./SuccessMessage";

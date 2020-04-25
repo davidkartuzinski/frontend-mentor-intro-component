@@ -4,9 +4,10 @@ import {
   heading,
   offer,
   termsAndConditions,
+  successMessage,
 } from "./content/content";
 import GlobalStyles from "./components/GlobalStyle";
-import { Form, Content, Header, Offer } from "./components";
+import { Form, Content, Header } from "./components";
 
 const GlobalStyle = GlobalStyles;
 
@@ -20,8 +21,11 @@ function App() {
             <Header heading={heading} />
           </Content>
           <div>
-            <Offer offer={offer} />
-            <Form termsAndConditions={termsAndConditions} />
+            <Form
+              termsAndConditions={termsAndConditions}
+              successMessage={successMessage}
+              offer={offer}
+            />
           </div>
         </main>
       </div>

@@ -17,4 +17,10 @@ const termsAndConditions = (
   </p>
 );
 
-export { contentParagraph, heading, offer, termsAndConditions };
+const successMessage = (
+  <p>
+    You have <strong>successfully</strong> registered for your trial!
+  </p>
+);
+
+export { contentParagraph, heading, offer, termsAndConditions, successMessage };
