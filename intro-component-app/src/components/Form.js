@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { useForm } from "react-hook-form";
-import { Input } from "./index";
+import { Input, SubmitButton } from "./index";
 
 const StyledForm = styled.form`
   border-radius: 8px;
@@ -33,32 +33,6 @@ const StyledForm = styled.form`
 
   p span {
     color: #ff7979;
-  }
-
-  button,
-  #submit-button {
-    border-radius: 6px;
-    border-top: 0;
-    border-left: 0;
-    border-right: 0;
-    border-bottom: solid 4px rgba(0, 0, 0, 0.0908818);
-    color: #fff;
-    text-transform: uppercase;
-    background-color: #38cc8b;
-    padding: 1rem;
-    width: 100%;
-    max-width: 460px;
-    font-family: "Poppins", sans-serif;
-    font-weight: 600;
-    font-size: 0.88rem;
-    margin: 0 auto 0;
-    height: 56px;
-  }
-
-  #submit-button {
-    display: block;
-    /* margin-top: 1rem; */
-    margin-top: min(calc(14px + 0.28vw), 1.3rem);
   }
 `;
 
@@ -185,16 +159,15 @@ const Form = ({ termsAndConditions }) => {
         {errors.password && errors.password.message}
       </Input>
 
-      <label className="submit-button" htmlFor="submit- button">
-        <button
-          type="submit"
-          id="submit-button"
-          form="free-trial"
-          value="submit"
-        >
-          {buttonText}
-        </button>
-      </label>
+      <SubmitButton
+        type="submit"
+        id="submit-button"
+        form="free-trial"
+        value="submit"
+      >
+        {buttonText}
+      </SubmitButton>
+
       {termsAndConditions}
     </StyledForm>
   );

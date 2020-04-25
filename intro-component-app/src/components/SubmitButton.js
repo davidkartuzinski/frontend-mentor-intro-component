@@ -16,6 +16,12 @@ const StyledButton = styled.button`
   font-family: "Poppins", sans-serif;
   font-weight: 600;
   font-size: 0.88rem;
+  margin: 0 auto 0;
+  height: 56px;
+
+  display: block;
+  /* margin-top: 1rem; */
+  margin-top: min(calc(14px + 0.28vw), 1.3rem);
 `;
 
 const StyledLabel = styled.label`
@@ -23,10 +29,12 @@ const StyledLabel = styled.label`
   margin-top: 1rem;
 `;
 
-const SubmitButton = ({ buttonText }) => {
+const SubmitButton = ({ type, id, value, form, children }) => {
   return (
-    <StyledLabel className="submit-button" htmlFor="submit- button">
-      <StyledButton id="submit-button">{buttonText}</StyledButton>
+    <StyledLabel className={id} htmlFor={id}>
+      <StyledButton value={value} type={type} form={form} id={id}>
+        {children}
+      </StyledButton>
     </StyledLabel>
   );
 };
